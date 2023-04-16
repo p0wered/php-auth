@@ -1,0 +1,33 @@
+@media screen and (max-width: 900px){
+    .flexbox{
+        align-items: flex-start;
+    }
+    .form-box{
+        flex-direction: column;
+    }
+    .form-image{
+        width: -moz-available;
+        height: auto;
+        padding: 3rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+    .bi-lightning-charge-fill{
+        font-size: 72px;
+    }
+    .form-sign{
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .form-sign-reg{
+        padding: 2.625rem;
+    }
+    .form-box{
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
