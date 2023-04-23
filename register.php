@@ -1,3 +1,7 @@
+<?php
+    session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,39 +22,55 @@
             <form class="form-sign-reg" action="vendor/signup.php" method="post" enctype="multipart/form-data">
                 <h2 class="welcome-text">Let's sign you up!</h2>
                 <div class="input-flexbox">
-                    <label class="form-sign-text">First Name</label>
-                    <input class="input-main" type="text" name="full_name">
+                    <label class="form-sign-text">
+                        First Name
+                        <input class="input-main" type="text" name="full_name">
+                    </label>
                 </div>
                 <div class="input-flexbox">
-                    <label class="form-sign-text">Login</label>
-                    <input class="input-main" type="text" name="login">
+                    <label class="form-sign-text">
+                        Login
+                        <input class="input-main" type="text" name="login">
+                    </label>
+
                 </div>
                 <div class="input-flexbox">
-                    <label class="form-sign-text">E-Mail</label>
-                    <input class="input-main" type="email" name="email">
+                    <label class="form-sign-text">
+                        E-Mail
+                        <input class="input-main" type="email" name="email">
+                    </label>
                 </div>
                 <div class="input-flexbox">
                     <label class="form-sign-text">Profile Pic</label>
                     <input class="input-main" type="file" name="avatar">
                 </div>
                 <div class="input-flexbox">
-                    <label class="form-sign-text">Password</label>
-                    <input class="input-main" type="password" name="password">
+                    <label class="form-sign-text">
+                        Password
+                        <input class="input-main" type="password" name="password">
+                    </label>
+
                 </div>
                 <div class="input-flexbox">
-                    <label class="form-sign-text">Confirm Password</label>
-                    <input class="input-main" type="password" name="password_confirm">
+                    <label class="form-sign-text">
+                        Confirm Password
+                        <input class="input-main" type="password" name="password_confirm">
+                    </label>
+
                 </div>
                 <div class="btn-flexbox">
-                    <button class="btn-main">Sign up</button>
+                    <button type="submit" class="btn-main">Sign up</button>
                 </div>
                 <div style="text-align: center; padding: 2rem 2rem 0 2rem">
                     <p class="form-alt-text">Already have an account?</p>
                     <a class="any-acc-btn" href="/index.php">Sign in</a>
                 </div>
-                <p class="msg">
-                    ЖОПА ЖОПА ЧЛЕН
-                </p>
+                <?php
+                    if ($_SESSION['message']) {
+                        echo '<p class="msg"> ' . $_SESSION['message'] . '</p>';
+                    }
+                    unset($_SESSION['message']);
+                ?>
             </form>
         </div>
     </div>

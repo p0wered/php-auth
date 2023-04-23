@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,19 +19,25 @@
 <section class="sign-in-section">
     <div class="flexbox">
         <div class="form-box">
-            <form class="form-sign" action="" method="">
+            <form class="form-sign" action="vendor/signin.php" method="post">
                 <h2 class="welcome-text">Welcome!</h2>
                 <div class="input-flexbox">
                     <label class="form-sign-text">Login</label>
-                    <input class="input-main" type="text">
+                    <input class="input-main" type="text" name="login">
                 </div>
                 <div class="input-flexbox">
                     <label class="form-sign-text">Password</label>
-                    <input class="input-main" type="password">
+                    <input class="input-main" type="password" name="password">
                 </div>
                 <div class="btn-flexbox">
-                    <button class="btn-main">Sign in</button>
+                    <button type="submit" class="btn-main">Sign in</button>
                 </div>
+                <?php
+                if ($_SESSION['message']) {
+                    echo '<p class="msg"> ' . $_SESSION['message'] . '</p>';
+                }
+                unset($_SESSION['message']);
+                ?>
             </form>
             <div class="form-image">
                 <i class="bi bi-lightning-charge-fill"></i>

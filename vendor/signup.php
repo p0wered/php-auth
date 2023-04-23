@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $connect = mysqli_connect('localhost','root','', 'test');
 
     if (!$connect) {
@@ -14,11 +14,21 @@
 
     if ($password === $password_confirm) {
 
-    }
-    else {
+        $path = 'uploads/' . time() . $_FILES['avatar']['name'];
+        if (!move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $path)) {
+            $_SESSION['message'] = 'Ошибка при загрузке сообщения';
+            header('Location: ../register.php');
+        }
 
-        die('Пароли не совпадают');
-    }
+        $password = md5($password);
 
-    //27:27
+        mysqli_query($connect, "INSERT INTO `users` (`id`, `full_name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name', '$login', '$email', '$password', '$path')");
+
+        $_SESSION['message'] = 'Регистрация прошла успешно';
+        header('Location: ../index.php');
+
+    } else {
+        $_SESSION['message'] = 'Пароли не совпадают';
+        header('Location: ../register.php');
+    }
 
