@@ -21,7 +21,7 @@
 <body>
 <section class="sign-in-section">
     <div class="flexbox-reg">
-        <div class="form-box">
+        <div class="form-box" data-aos="fade-up">
             <form class="form-sign-reg" action="vendor/signup.php" method="post" enctype="multipart/form-data">
                 <h2 class="welcome-text">Let's sign you up!</h2>
                 <div class="input-flexbox">
@@ -79,5 +79,8 @@
     </div>
 </section>
 </body>
+<script>
+    AOS.init();
+</script>
 </html>
 

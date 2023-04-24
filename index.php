@@ -22,7 +22,7 @@
 <body>
 <section class="sign-in-section">
     <div class="flexbox">
-        <div class="form-box">
+        <div class="form-box" data-aos="fade-up">
             <form class="form-sign" action="vendor/signin.php" method="post">
                 <h2 class="welcome-text">Welcome!</h2>
                 <div class="input-flexbox">
@@ -52,4 +52,7 @@
     </div>
 </section>
 </body>
+<script>
+    AOS.init();
+</script>
 </html>

@@ -184,13 +184,12 @@ h2{
 }
 
 .pfp-box{
-    width: 14rem;
-    height: 14rem;
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     transition: 300ms;
+    aspect-ratio: 1;
 }
 
 .pfp-box:hover{

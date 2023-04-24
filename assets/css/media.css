@@ -1,7 +1,4 @@
 @media screen and (max-width: 900px){
-    .flexbox{
-        align-items: flex-start;
-    }
     .form-box{
         flex-direction: column;
     }
@@ -17,6 +14,12 @@
     }
     .form-sign{
         padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-height: 759px){
+    .flexbox{
+        height: auto;
     }
 }
 
