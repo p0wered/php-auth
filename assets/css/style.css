@@ -169,3 +169,94 @@ h2{
     padding-top: 2rem;
 }
 
+.profile-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 40px #0000001f;
+    margin: 1rem;
+    transition: 300ms;
+    padding: 2rem;
+}
+
+.pfp-box{
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 300ms;
+}
+
+.pfp-box:hover{
+    transform: scale(103%);
+}
+
+.profile-section{
+    height: 100vh;
+}
+
+.flexbox-profile{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-name{
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.logout-btn{
+    padding: .825rem 2.625rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    background-color: #d9bfff;
+    border-radius: 14px;
+    transition: 300ms;
+}
+
+.logout-btn:hover{
+    color: #333;
+    background-color: #c7a0ff;
+}
+
+.profile-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.profile-flexbox-in{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 1rem;
+    transition: 300ms;
+}
+
+.profile-merge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-flexbox-out{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

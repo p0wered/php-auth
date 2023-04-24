@@ -7,7 +7,23 @@
     }
 
     $login = $_POST['login'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
-    $check_user = mysqli_query('$connect', "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
-    echo mysqli_num_rows($check_user);
+    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
+    if (mysqli_num_rows($check_user) > 0) {
+
+        $user = mysqli_fetch_assoc($check_user);
+
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "full_name" => $user['full_name'],
+            "avatar" => $user['avatar'],
+            "email" => $user['email']
+        ];
+
+        header('Location: ../profile.php');
+
+    } else {
+        $_SESSION['message'] = 'Invalid username or password';
+        header('Location: ../index.php');
+    }
