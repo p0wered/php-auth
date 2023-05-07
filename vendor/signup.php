@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $connect = mysqli_connect('localhost','root','', 'test');
+    $connect = mysqli_connect('localhost','','', '');
 
     if (!$connect) {
         die('Unable to connect to DB');
