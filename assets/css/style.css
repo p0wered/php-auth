@@ -101,10 +101,7 @@ h2{
     align-items: center;
     flex-direction: column;
     height: 34rem;
-    background-image: url("/assets/css/blurry.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(#d7c0ff, #afd5ff);
     padding: 4rem;
     text-align: center;
 }
